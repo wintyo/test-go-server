@@ -1,0 +1,69 @@
+basePath: http://localhost:8080
+definitions:
+  model.Book:
+    properties:
+      content:
+        example: 本の内容
+        type: string
+      id:
+        example: 1
+        type: integer
+      title:
+        example: 本のタイトル
+        type: string
+    type: object
+info:
+  contact: {}
+  title: Swagger Example Book API
+  version: "1.0"
+paths:
+  /api/v1/book:
+    post:
+      responses:
+        "200":
+          description: ""
+      summary: Bookを追加する
+      tags:
+      - book
+  /api/v1/book/{id}:
+    delete:
+      parameters:
+      - description: Book Id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: ""
+      summary: Bookの削除
+      tags:
+      - book
+    put:
+      parameters:
+      - description: Book Id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: ""
+      summary: Bookを更新する
+      tags:
+      - book
+  /api/v1/books:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              items:
+                $ref: '#/definitions/model.Book'
+              type: array
+            type: array
+      summary: リストを返す
+      tags:
+      - book
+swagger: "2.0"
