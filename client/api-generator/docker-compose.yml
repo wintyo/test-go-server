@@ -1,8 +1,0 @@
-version: "3.0"
-
-services:
-  openapi-generator:
-    image: openapitools/openapi-generator-cli:v5.2.0
-    volumes:
-      - ./:/local
-    command: generate -g typescript-axios -i local/swagger.yaml -o local/client
