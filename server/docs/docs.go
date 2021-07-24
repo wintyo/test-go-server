@@ -91,10 +91,7 @@ var doc = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/definitions/model.Book"
-                                }
+                                "$ref": "#/definitions/model.Book"
                             }
                         }
                     }
@@ -136,7 +133,7 @@ type swaggerInfo struct {
 var SwaggerInfo = swaggerInfo{
 	Version:     "1.0",
 	Host:        "",
-	BasePath:    "http://localhost:8080",
+	BasePath:    "/localhost:8080",
 	Schemes:     []string{},
 	Title:       "Swagger Example Book API",
 	Description: "",

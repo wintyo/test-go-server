@@ -3,6 +3,7 @@ package main
 import (
 	"server/controller"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -11,9 +12,15 @@ import (
 // @title Swagger Example Book API
 // @version 1.0
 
-// @BasePath http://localhost:8080
+// @BasePath /localhost:8080
 func main() {
 	engine := gin.Default()
+
+	// CORS対応
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://localhost:4000"}
+	engine.Use(cors.New(config))
+
 	apiEngine := engine.Group("/api")
 	{
 		v1 := apiEngine.Group("/v1")

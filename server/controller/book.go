@@ -36,7 +36,7 @@ func BookAdd(c *gin.Context) {
 // BookList
 // @Summary リストを返す
 // @Tags book
-// @Success 200 {array} []model.Book
+// @Success 200 {array} model.Book
 // @Router /api/v1/books [get]
 func BookList(c *gin.Context) {
 	bookService := service.BookService{}
