@@ -102,7 +102,17 @@ var doc = `{
     "definitions": {
         "model.Book": {
             "type": "object",
+            "required": [
+                "bought_at",
+                "content",
+                "title"
+            ],
             "properties": {
+                "bought_at": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "2021-07-01"
+                },
                 "content": {
                     "type": "string",
                     "example": "本の内容"
@@ -110,6 +120,15 @@ var doc = `{
                 "id": {
                     "type": "integer",
                     "example": 1
+                },
+                "status": {
+                    "description": "0: 気になる\n1: 購入済\n2: 読了",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
                 },
                 "title": {
                     "type": "string",
@@ -132,8 +151,8 @@ type swaggerInfo struct {
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = swaggerInfo{
 	Version:     "1.0",
-	Host:        "",
-	BasePath:    "/localhost:8080",
+	Host:        "localhost:8080",
+	BasePath:    "/",
 	Schemes:     []string{},
 	Title:       "Swagger Example Book API",
 	Description: "",

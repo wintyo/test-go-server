@@ -6,7 +6,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
-import { BookApi } from '../api-generator/client/'
+import { BookApi } from './api/'
 
 const api = new BookApi({
   basePath: 'http://localhost:8080'

@@ -32,7 +32,13 @@ export interface ModelBook {
      * @type {string}
      * @memberof ModelBook
      */
-    content?: string;
+    boughtAt: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelBook
+     */
+    content: string;
     /**
      * 
      * @type {number}
@@ -40,11 +46,17 @@ export interface ModelBook {
      */
     id?: number;
     /**
+     * 0: 気になる 1: 購入済 2: 読了
+     * @type {number}
+     * @memberof ModelBook
+     */
+    status?: number;
+    /**
      * 
      * @type {string}
      * @memberof ModelBook
      */
-    title?: string;
+    title: string;
 }
 
 /**

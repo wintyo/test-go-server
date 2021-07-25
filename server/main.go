@@ -12,7 +12,8 @@ import (
 // @title Swagger Example Book API
 // @version 1.0
 
-// @BasePath /localhost:8080
+// @host localhost:8080
+// @BasePath /
 func main() {
 	engine := gin.Default()
 
