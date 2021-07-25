@@ -1,3 +1,14 @@
+# フロント環境
+
+## クライアントAPI自動生成
+serverディレクトリでswagger.yamlを生成したのち、以下のコマンドを実行
+
+```
+$ yarn generate-api
+```
+
+---
+
 # Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
